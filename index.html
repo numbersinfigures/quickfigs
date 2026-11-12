@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Numbers in Figures - Quick Vizzes</title>
+  <style>
+    :root {
+      --primary-color: #2b3a4a;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+      --text-color: #333333;
+      --sidebar-width: 180px;
+      --topnav-height: 60px; /* Approximate height of top nav */
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    /* Top Navigation Bar - Now spans full width across the absolute top */
+    nav:not(.sidebar) {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      height: var(--topnav-height);
+      background-color: var(--primary-color);
+      padding: 0 2rem;
+      box-sizing: border-box;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+    }
+
+    nav:not(.sidebar) ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      justify-content: flex-start; /* Left-justified */
+      flex-wrap: wrap;
+    }
+
+    nav:not(.sidebar) a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 600;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    nav:not(.sidebar) a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Sidebar - Starts below the top nav bar and fills the rest of the viewport */
+    .sidebar {
+      width: var(--sidebar-width);
+      height: calc(100vh - var(--topnav-height));
+      position: fixed;
+      top: var(--topnav-height);
+      left: 0;
+      background-color: #f8f9fa;
+      border-right: 1px solid #dee2e6;
+      padding: 20px 15px;
+      box-sizing: border-box;
+      z-index: 100;
+      overflow-y: auto;
+    }
+
+    /* Remove default list styling and stack vertically */
+    .sidebar ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    /* Add spacing between links */
+    .sidebar li {
+      margin-bottom: 12px;
+    }
+
+    /* Style the links to act as full-width clickable buttons */
+    .sidebar a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+      transition: background-color 0.2s ease;
+    }
+
+    /* Add a hover effect */
+    .sidebar a:hover {
+      background-color: #e9ecef;
+      color: #000;
+    }
+
+    /* Main Container - Pushed right to clear the sidebar */
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      margin-left: calc(var(--sidebar-width) + 2rem);
+    }
+
+    /* Plot Section Cards */
+    .plot-card {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 2.5rem;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      scroll-margin-top: calc(var(--topnav-height) + 1rem);
+    }
+
+    .plot-card h2 {
+      margin-top: 0;
+      border-bottom: 2px solid var(--bg-color);
+      padding-bottom: 0.5rem;
+      color: var(--primary-color);
+    }
+
+    /* Responsive Plot Frame */
+    .plot-container {
+      width: 100%;
+      height: 550px;
+      border: none;
+    }
+    
+    .card-divider {
+  border: 0;
+  height: 1px;
+  background-color: #e9ecef; /* Subtle light gray */
+  margin: 2rem 0; /* Spacing above and below the line */
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation bar - Full width across the top, left-justified -->
+  <nav>
+    <ul>
+      <li><a href="https://numbersinfigures.netlify.app">Numbers in Figures</a></li>
+    </ul>
+  </nav>
+  
+  <!-- Sidebar - Sits underneath the top nav bar -->
+  <nav class="sidebar">
+    <ul>
+      <li><a href="#11-10-2026">11-10-2026</a></li>
+<!--      <li><a href="#week-7-2026">Week 7 (2026)</a></li>
+      <li><a href="#week-6-2026">Week 6 (2026)</a></li> -->
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>11-10-2026</h1>
+
+    <!-- Section 1 -->
+    <section id="#11-10-2026" class="plot-card">
+      <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
+      <h3><u>Top 12</u></h3>
+      <h4>Hover and click on plot/legend points to explore more</h4>
+      <figure>
+      <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Week 8 Plot"
+      style="width: 100%; height: 90vh;"></iframe>
+      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums: Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+      Out of 100 current players.</figcaption>
+      </figure>
+      <h4><u>13th-24th</u></h4>
+      <figure>
+      <iframe class="plot-container" src="plots/second12curr_plotly.html" title="Week 7 Plot"
+      style="width: 100%; height: 90vh;"></iframe>
+      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums: Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+      Out of 100 current players.</figcaption>
+      </figure>
+      
+      <hr class="card-divider">
+      <h3><u>Bottom 12</u></h3>
+      <h4>Hover and click on plot/legend points to explore & isolate</h4>
+      <figure>
+      <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Week 6 Plot"
+      style="width: 100%; height: 90vh;"></iframe>
+      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums: Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+      Out of 100 current players.</figcaption>
+      </figure>
+      <h3><u>Bottom 13th-24th</u></h3>
+      <figure>
+      <iframe class="plot-container" src="plots/secondbottom12curr_plotly.html" title="Week 6 Plot"
+      style="width: 100%; height: 90vh;"></iframe>
+      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums: Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+      Out of 100 current players.</figcaption>
+      </figure>
+    </section>
+  </div>
+
+</body>
+</html>
