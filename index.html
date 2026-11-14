@@ -23,7 +23,7 @@
       line-height: 1.6;
     }
 
-    /* Top Navigation Bar - Now spans full width across the absolute top */
+    /* Top Navigation Bar - Spans full width with space between left and right content */
     nav:not(.sidebar) {
       position: sticky;
       top: 0;
@@ -36,6 +36,7 @@
       z-index: 1000;
       display: flex;
       align-items: center;
+      justify-content: space-between; /* Pushes left and right contents apart */
     }
 
     nav:not(.sidebar) ul {
@@ -136,41 +137,43 @@
       height: 550px;
       border: none;
     }
-    
+     
     .card-divider {
-  border: 0;
-  height: 1px;
-  background-color: #e9ecef; /* Subtle light gray */
-  margin: 2rem 0; /* Spacing above and below the line */
+      border: 0;
+      height: 1px;
+      background-color: #e9ecef; /* Subtle light gray */
+      margin: 2rem 0; /* Spacing above and below the line */
     }
-    
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation bar - Full width across the top, left-justified -->
-  <nav>
+  <!-- Top Navigation bar - Full width across the top with left and right elements -->
+  <nav class="top-nav">
     <ul>
-      <li><a href="https://numbersinfigures.netlify.app">Numbers in Figures</a></li>
+      <li><a>Numbers in Figures - Quick Interactive Plots</a></li>
     </ul>
+    <div class="nav-right">
+      <a href="https://numbersinfigures.netlify.app/" target="_blank" rel="noopener noreferrer">Full Blog Site</a>
+    </div>
   </nav>
-  
+
   <!-- Sidebar - Sits underneath the top nav bar -->
   <nav class="sidebar">
     <ul>
-      <li><a href="#11-10-2026">11-10-2026</a></li>
+      <li><a href="#11-14-2026">11-14-2026</a></li>
 <!--      <li><a href="#week-7-2026">Week 7 (2026)</a></li>
       <li><a href="#week-6-2026">Week 6 (2026)</a></li> -->
     </ul>
   </nav>
 
   <div class="container">
-    <h1>11-10-2026</h1>
+    <h1>11-14-2026</h1>
 
     <!-- Section 1 -->
-    <section id="#11-10-2026" class="plot-card">
+    <section id="#11-14-2026" class="plot-card">
       <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
-      <h3><u>Top 12</u></h3>
+      <h3 id ="Overperformers"><u>Top 12</u></h3>
       <h4>Hover and click on plot/legend points to explore more</h4>
       <figure>
       <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Week 8 Plot"
@@ -187,7 +190,7 @@
       </figure>
       
       <hr class="card-divider">
-      <h3><u>Bottom 12</u></h3>
+      <h3 id ="Underperformers"><u>Bottom 12</u></h3>
       <h4>Hover and click on plot/legend points to explore & isolate</h4>
       <figure>
       <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Week 6 Plot"
