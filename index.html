@@ -161,19 +161,24 @@
   <!-- Sidebar - Sits underneath the top nav bar -->
   <nav class="sidebar">
     <ul>
-      <li><a href="#11-14-2026">11-14-2026</a></li>
+      <li><a href="#11-14-2026"><b>11-14-2026</b></a>
+      <ul>
+      <li><a href="#11-14-2026#Overperformers">Overperformers</a></li>
+      <li><a href="#11-14-2026#Underperformers">Underperformers</a></li>
+      </li>
 <!--      <li><a href="#week-7-2026">Week 7 (2026)</a></li>
       <li><a href="#week-6-2026">Week 6 (2026)</a></li> -->
+    </ul>
     </ul>
   </nav>
 
   <div class="container">
+    <section id="11-14-2026" class="plot-card">
     <h1>11-14-2026</h1>
-
     <!-- Section 1 -->
-    <section id="#11-14-2026" class="plot-card">
+    <section id="11-14-2026#Overperformers" class="plot-card">
       <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
-      <h3 id ="Overperformers"><u>Top 12</u></h3>
+      <h3><u>Top 12</u></h3>
       <h4>Hover and click on plot/legend points to explore more</h4>
       <figure>
       <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Week 8 Plot"
@@ -188,9 +193,11 @@
       <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums: Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
       Out of 100 current players.</figcaption>
       </figure>
-      
+    </section>
+
+    <section id="11-14-2026#Underperformers" class="plot-card">
       <hr class="card-divider">
-      <h3 id ="Underperformers"><u>Bottom 12</u></h3>
+      <h3><u>Bottom 12</u></h3>
       <h4>Hover and click on plot/legend points to explore & isolate</h4>
       <figure>
       <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Week 6 Plot"
