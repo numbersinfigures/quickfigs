@@ -11,7 +11,7 @@
       --card-bg: #ffffff;
       --text-color: #333333;
       --sidebar-width: 150px;
-      --topnav-height: 60px; /* Approximate height of top nav */
+      --topnav-height: 60px;
     }
 
     body {
@@ -23,7 +23,7 @@
       line-height: 1.6;
     }
 
-    /* Top Navigation Bar - Spans full width with space between left and right content */
+    /* Top Navigation Bar */
     nav:not(.sidebar) {
       position: sticky;
       top: 0;
@@ -36,7 +36,7 @@
       z-index: 1000;
       display: flex;
       align-items: center;
-      justify-content: space-between; /* Pushes left and right contents apart */
+      justify-content: space-between;
     }
 
     nav:not(.sidebar) ul {
@@ -45,7 +45,7 @@
       padding: 0;
       display: flex;
       gap: 1.5rem;
-      justify-content: flex-start; /* Left-justified */
+      justify-content: flex-start;
       flex-wrap: wrap;
     }
 
@@ -62,7 +62,7 @@
       background-color: rgba(255, 255, 255, 0.2);
     }
 
-    /* Sidebar - Starts below the top nav bar and fills the rest of the viewport */
+    /* Sidebar - Default Desktop Styles */
     .sidebar {
       width: var(--sidebar-width);
       height: calc(100vh - var(--topnav-height));
@@ -77,19 +77,16 @@
       overflow-y: auto;
     }
 
-    /* Remove default list styling and stack vertically */
     .sidebar ul {
       list-style-type: none;
       padding: 0;
       margin: 0;
     }
 
-    /* Add spacing between links */
     .sidebar li {
       margin-bottom: 12px;
     }
 
-    /* Style the links to act as full-width clickable buttons */
     .sidebar a {
       text-decoration: none;
       color: #333;
@@ -100,13 +97,12 @@
       transition: background-color 0.2s ease;
     }
 
-    /* Add a hover effect */
     .sidebar a:hover {
       background-color: #e9ecef;
       color: #000;
     }
 
-    /* Main Container - Pushed right to clear the sidebar */
+    /* Main Container - Pushed right on desktop to clear sidebar */
     .container {
       max-width: 1000px;
       margin: 2rem auto;
@@ -131,7 +127,6 @@
       color: var(--primary-color);
     }
 
-    /* Responsive Plot Frame */
     .plot-container {
       width: 100%;
       height: 550px;
@@ -141,14 +136,26 @@
     .card-divider {
       border: 0;
       height: 1px;
-      background-color: #e9ecef; /* Subtle light gray */
-      margin: 2rem 0; /* Spacing above and below the line */
+      background-color: #e9ecef;
+      margin: 2rem 0;
+    }
+
+    /* --- MOBILE RESPONSIVE FIX (Screens 768px wide or smaller) --- */
+    @media screen and (max-width: 768px) {
+      .sidebar {
+        display: none; /* Completely hides the left navigation bar on mobile */
+      }
+      .container {
+        margin-left: auto;
+        margin-right: auto; /* Centers container and takes up full screen width */
+        padding: 0 0.5rem;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Top Navigation bar - Full width across the top with left and right elements -->
+  <!-- Top Navigation bar -->
   <nav class="top-nav">
     <ul>
       <li><a>Numbers in Figures - Quick Interactive Plots</a></li>
@@ -158,75 +165,74 @@
     </div>
   </nav>
 
-  <!-- Sidebar - Sits underneath the top nav bar -->
+  <!-- Sidebar -->
   <nav class="sidebar">
     <ul>
       <li><a href="#11-15-2026"><b>11-15-2026</b></a>
-      <ul>
-      <li><a href="#11-15-2026#Overperformers">Overperformers</a></li>
-      <li><a href="#11-15-2026#Underperformers">Underperformers</a></li>
+        <ul>
+          <li><a href="#11-15-2026#Overperformers">Overperformers</a></li>
+          <li><a href="#11-15-2026#Underperformers">Underperformers</a></li>
+        </ul>
       </li>
-<!--      <li><a href="#week-7-2026">Week 7 (2026)</a></li>
-      <li><a href="#week-6-2026">Week 6 (2026)</a></li> -->
-    </ul>
     </ul>
   </nav>
-<div class="container">
-  <section id="11-15-2026" class="plot-card">
-    <h1>11-15-2026</h1>
-    
-    <!-- Section 1: Overperformers -->
-    <section id="11-15-2026-Overperformers" class="plot-card">
-      <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
-      <h3><u>Top 12</u></h3>
-      <h4>Hover and click on plot/legend points to explore more</h4>
+
+  <div class="container">
+    <section id="11-15-2026" class="plot-card">
+      <h1>11-15-2026</h1>
       
-      <figure style="margin: 0 0 2rem 0; width: 100%;">
-        <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Top 12 Plot"
-        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
-        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
-          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-          Out of 100 current players. Box = 25th/50th/75th %iles.
-        </figcaption>
-      </figure>
+      <!-- Section 1: Overperformers -->
+      <section id="11-15-2026#Overperformers" class="plot-card">
+        <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
+        <h3><u>Top 12</u></h3>
+        <h4>Hover and click on plot/legend points to explore more</h4>
+        
+        <figure style="margin: 0 0 2rem 0; width: 100%;">
+          <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Top 12 Plot"
+          style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+          <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+            Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+            Out of 100 current players. Box = 25th/50th/75th %iles.
+          </figcaption>
+        </figure>
 
-      <h3><u>13th-24th</u></h3>
-      <figure style="margin: 0 0 2rem 0; width: 100%;">
-        <iframe class="plot-container" src="plots/second12curr_plotly.html" title="13th-24th Plot"
-        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
-        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
-          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-          Out of 100 current players. Box = 25th/50th/75th %iles.
-        </figcaption>
-      </figure>
+        <h3><u>13th-24th</u></h3>
+        <figure style="margin: 0 0 2rem 0; width: 100%;">
+          <iframe class="plot-container" src="plots/second12curr_plotly.html" title="13th-24th Plot"
+          style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+          <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+            Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+            Out of 100 current players. Box = 25th/50th/75th %iles.
+          </figcaption>
+        </figure>
+      </section>
+
+      <!-- Section 2: Underperformers -->
+      <section id="11-15-2026#Underperformers" class="plot-card">
+        <hr class="card-divider">
+        <h3><u>Bottom 12</u></h3>
+        <h4>Hover and click on plot/legend points to explore & isolate</h4>
+        <figure style="margin: 0 0 2rem 0; width: 100%;">
+          <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Bottom 12 Plot"
+          style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+          <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+            Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+            Out of 100 current players. Box = 25th/50th/75th %iles.
+          </figcaption>
+        </figure>
+
+        <h3><u>Bottom 13th-24th</u></h3>
+        <figure style="margin: 0 0 2rem 0; width: 100%;">
+          <iframe class="plot-container" src="plots/secondbottom12curr_plotly.html" title="Bottom 13th-24th Plot"
+          style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+          <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+            Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+            Out of 100 current players. Box = 25th/50th/75th %iles.
+          </figcaption>
+        </figure>
+      </section>
     </section>
-
-    <!-- Section 2: Underperformers -->
-    <section id="11-15-2026-Underperformers" class="plot-card">
-      <hr class="card-divider">
-      <h3><u>Bottom 12</u></h3>
-      <h4>Hover and click on plot/legend points to explore & isolate</h4>
-      <figure style="margin: 0 0 2rem 0; width: 100%;">
-        <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Bottom 12 Plot"
-        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
-        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
-          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-          Out of 100 current players. Box = 25th/50th/75th %iles.
-        </figcaption>
-      </figure>
-
-      <h3><u>Bottom 13th-24th</u></h3>
-      <figure style="margin: 0 0 2rem 0; width: 100%;">
-        <iframe class="plots-container" src="plots/secondbottom12curr_plotly.html" title="Bottom 13th-24th Plot"
-        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
-        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
-          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-          Out of 100 current players. Box = 25th/50th/75th %iles.
-        </figcaption>
-      </figure>
-    </section>
-  </section>
-</div>
+  </div>
 
 </body>
 </html>
