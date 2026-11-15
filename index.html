@@ -10,7 +10,7 @@
       --bg-color: #f8f9fa;
       --card-bg: #ffffff;
       --text-color: #333333;
-      --sidebar-width: 180px;
+      --sidebar-width: 150px;
       --topnav-height: 60px; /* Approximate height of top nav */
     }
 
@@ -171,49 +171,62 @@
     </ul>
     </ul>
   </nav>
-
-  <div class="container">
-    <section id="11-15-2026" class="plot-card">
+<div class="container">
+  <section id="11-15-2026" class="plot-card">
     <h1>11-15-2026</h1>
-    <!-- Section 1 -->
-    <section id="11-15-2026#Overperformers" class="plot-card">
+    
+    <!-- Section 1: Overperformers -->
+    <section id="11-15-2026-Overperformers" class="plot-card">
       <h2>NFL WR Fantasy Points Over Replacement (FORP)</h2>
       <h3><u>Top 12</u></h3>
       <h4>Hover and click on plot/legend points to explore more</h4>
-      <figure>
-      <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Week 8 Plot"
-      style="width: 100%; height: 90vh;"></iframe>
-      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-      Out of 100 current players. Box = 25th/50th/75th %iles.</figcaption>
+      
+      <figure style="margin: 0 0 2rem 0; width: 100%;">
+        <iframe class="plot-container" src="plots/top12curr_plotly.html" title="Top 12 Plot"
+        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+          Out of 100 current players. Box = 25th/50th/75th %iles.
+        </figcaption>
       </figure>
-      <h4><u>13th-24th</u></h4>
-      <figure>
-      <iframe class="plot-container" src="plots/second12curr_plotly.html" title="Week 7 Plot"
-      style="width: 100%; height: 90vh;"></iframe>
-      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-      Out of 100 current players. Box = 25th/50th/75th %iles.</figcaption>
+
+      <h3><u>13th-24th</u></h3>
+      <figure style="margin: 0 0 2rem 0; width: 100%;">
+        <iframe class="plot-container" src="plots/second12curr_plotly.html" title="13th-24th Plot"
+        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+          Out of 100 current players. Box = 25th/50th/75th %iles.
+        </figcaption>
       </figure>
     </section>
 
-    <section id="11-15-2026#Underperformers" class="plot-card">
+    <!-- Section 2: Underperformers -->
+    <section id="11-15-2026-Underperformers" class="plot-card">
       <hr class="card-divider">
       <h3><u>Bottom 12</u></h3>
       <h4>Hover and click on plot/legend points to explore & isolate</h4>
-      <figure>
-      <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Week 6 Plot"
-      style="width: 100%; height: 90vh;"></iframe>
-      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-      Out of 100 current players. Box = 25th/50th/75th %iles.</figcaption>
+      <figure style="margin: 0 0 2rem 0; width: 100%;">
+        <iframe class="plot-container" src="plots/bottom12curr_plotly.html" title="Bottom 12 Plot"
+        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+          Out of 100 current players. Box = 25th/50th/75th %iles.
+        </figcaption>
       </figure>
+
       <h3><u>Bottom 13th-24th</u></h3>
-      <figure>
-      <iframe class="plot-container" src="plots/secondbottom12curr_plotly.html" title="Week 6 Plot"
-      style="width: 100%; height: 90vh;"></iframe>
-      <figcaption style="background-color: #f2f2f2; color: #1E407C;">Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
-      Out of 100 current players. Box = 25th/50th/75th %iles.</figcaption>
+      <figure style="margin: 0 0 2rem 0; width: 100%;">
+        <iframe class="plots-container" src="plots/secondbottom12curr_plotly.html" title="Bottom 13th-24th Plot"
+        style="width: 100%; height: 500px; min-height: 400px; border: none; display: block;"></iframe>
+        <figcaption style="background-color: #f2f2f2; color: #1E407C; padding: 10px; font-size: 0.9rem;">
+          Inclusion Minimums:<br> Full-season - 5 games, 20 receptions; 2026 - 3 games, 10 receptions.<br>
+          Out of 100 current players. Box = 25th/50th/75th %iles.
+        </figcaption>
       </figure>
     </section>
-  </div>
+  </section>
+</div>
 
 </body>
 </html>
